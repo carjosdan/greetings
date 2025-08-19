@@ -4,20 +4,20 @@ A package that provides a simple way to get greetings in Go.
 
 ## Install
 ```bash
-go get -u https://github.com/carjosdan/greetings
+go get -u github.com/carjosdan/greetings
 ```
 ## Use
 ```go
 import (
+	"fmt"
+
 	"github.com/carjosdan/greetings"
 )
 func main() {
 
 	message, err := greetings.Hello("Alice")
 	if err != nil {
-		log.SetPrefix("greetings: ")
-		log.SetFlags(0)
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 	fmt.Println(message)
 
